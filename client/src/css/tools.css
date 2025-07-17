@@ -1,0 +1,72 @@
+.line{
+min-width: 393px;
+max-width: 100%;
+height: 1px;
+background-image: linear-gradient(90deg, #FFFFFF 10%, #000000 50%, #FFFFFF 90%);
+}
+
+.SignSale{
+   padding: 20px;
+}
+.upperSaleSign{
+    max-width: 85px;
+    /* width: 79px; */
+min-height: 147px;
+background: rgba(57, 38, 37, 0.7);
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 7px;
+}
+.upperRectangle{
+    min-width: 68px;
+min-height: 43px;
+border: 1px solid rgba(255, 255, 255, 1);
+
+
+}
+.saleText{
+    /* width: 57px;
+    height: 44px; */
+  padding: 5px;
+  color: rgba(255, 255, 255, 1);
+
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    
+}
+.smallSaleText{
+    /* width: 58px; */
+min-height: 88px;
+
+
+font-weight: 400;
+font-size: 18px;
+padding: 5px;
+direction: rtl;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+
+}
+.lowerRectangle{
+ 
+
+    max-width: 100px;
+min-height: 62px;
+margin-top: 5px;
+background: rgba(0, 0, 0, 0.67);
+
+}
+.saleLowerText{
+    /* max-width: 53px;
+min-height: 54px; */
+color: rgba(255, 255, 255, 1);
+font-weight: var(--font-weight-700);
+font-size: var(--font-size-20);
+direction: rtl;
+text-align: center;
+
+}
