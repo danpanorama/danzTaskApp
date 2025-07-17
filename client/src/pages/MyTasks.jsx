@@ -2,10 +2,10 @@ import AddTask from "../components/task/AddTask";
 import TaskList from "../components/task/TaskList";
 
 
-const Tasks = () => {
+const MyTasks = () => {
   return (
    <div className="homeScreen">
-<AddTask/>
+
 
 
 <TaskList/>
@@ -14,4 +14,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default MyTasks;

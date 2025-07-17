@@ -10,7 +10,7 @@ const Nav = () => {
         <FaHome />
         <span>דף הבית</span>
       </NavLink>
-      <NavLink to="/tasks" className="navLink" activeclassname="active">
+      <NavLink to="/myTasks" className="navLink" activeclassname="active">
         <FaTasks />
         <span>המשימות שלי ⭐</span>
       </NavLink>

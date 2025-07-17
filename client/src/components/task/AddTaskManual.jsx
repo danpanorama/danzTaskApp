@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewTask } from "../../redux/actions/taskActions";
-import "../../css/tasks.css";
 
-const AddTask = () => {
+const AddTaskManual = () => {
   const dispatch = useDispatch();
   const [taskData, setTaskData] = useState({
     title: "",
     notes: "",
     price: "",
+    // אין שדה date כאן
   });
 
   const handleChange = (e) => {
@@ -26,14 +26,13 @@ const AddTask = () => {
 
     const fullTask = {
       ...taskData,
-      id: crypto.randomUUID(), // מזהה ייחודי
-      createdAt: new Date().toISOString(), // תאריך יצירה
+      id: crypto.randomUUID(),
+      createdAt: new Date().toISOString(),
+      date: new Date().toISOString(), // מוסיף כאן תאריך אוטומטי
     };
 
-    // שמירה ב־Redux
     dispatch(addNewTask(fullTask));
 
-    // שמירה ב־Local Storage
     const existing = JSON.parse(localStorage.getItem("tasks")) || [];
     localStorage.setItem("tasks", JSON.stringify([...existing, fullTask]));
 
@@ -42,7 +41,7 @@ const AddTask = () => {
 
   return (
     <div className="home-container">
-      <h2>  מי זיין אותך הפעם דניאל </h2>
+      <h2>מילוי משימה ידני</h2>
       <form className="task-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -64,10 +63,11 @@ const AddTask = () => {
           value={taskData.price}
           onChange={handleChange}
         />
+        {/* אין שדה תאריך פה */}
         <button type="submit">שמור משימה</button>
       </form>
     </div>
   );
 };
 
-export default AddTask;
+export default AddTaskManual;
