@@ -1,0 +1,80 @@
+:root{
+    --font-family: "M PLUS Rounded 1c", sans-serif;
+--font-weight-400: 400;
+--font-weight-700:700;
+--font-size-33: 33.11px;
+--font-weight-300: 300;
+--font-size-20: 20px;
+--brown-color:rgba(57, 38, 37, 1);
+--font-size-40:40px;
+--black:black;
+
+    
+}
+body{
+      font-family: "M PLUS Rounded 1c", sans-serif;
+      overflow-x: hidden;
+}
+
+.evenly{
+    justify-content: space-evenly;
+}
+.between{
+    justify-content: space-between;
+}
+
+.flex{
+    display: flex;
+
+}
+.col{
+    flex-direction: column;
+}
+.row{
+    flex-direction: row;
+}
+.acenter{
+    align-items: center;
+}
+
+.jcenter{
+    justify-content: center;
+}
+
+.flex-row-acenter{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+   
+}
+.flex-col-center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.img{
+    height: 100%;
+    width: 100%;
+   
+}
+.marginRight20{
+    margin-right: 20px;
+}
+
+.marginBottom30{
+    margin-bottom: 30px;
+}
+
+.containerWeb{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.drtl{
+    direction: rtl;
+}
+
+.space10px{
+    margin-top: 10px;
+}

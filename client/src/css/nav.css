@@ -1,0 +1,48 @@
+.navContainer {
+  height: 10vh;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999999999;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 ;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.navLink {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.navLink svg {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
+
+.navLink.active {
+  color: #007bff;
+}
+
+.addTaskButton {
+  background-color: #007bff;
+  color: white !important;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.6rem;
+  margin-top: -30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
