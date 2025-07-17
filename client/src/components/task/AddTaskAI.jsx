@@ -7,7 +7,7 @@ async function fetchTaskFromAI(freeText) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ******`, // החלף למפתח שלך
+      Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`, // החלף למפתח שלך
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",

@@ -85,7 +85,7 @@
 //     method: "POST",
 //     headers: {
 //       "Content-Type": "application/json",
-//       Authorization: `Bearer *********`, // <-- תחליף כאן למפתח שלך
+//       Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`, // <-- תחליף כאן למפתח שלך
 //     },
 //     body: JSON.stringify({
 //       model: "gpt-3.5-turbo",
