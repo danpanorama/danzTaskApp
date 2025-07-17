@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import About from "../pages/About";
-import StoreScreen from "../pages/StoreScreen";
-import ItemScreen from "../pages/ItemScreen";
+
+import Tasks from "../pages/Tasks";
+
 
 
 const AppRoutes = () => {
@@ -10,10 +10,7 @@ const AppRoutes = () => {
  <div className="navRoutes">
      <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/store" element={<StoreScreen />} />
- <Route path="/item" element={<ItemScreen />} />
-
+      <Route path="/addTasks" element={<Tasks />} />
     </Routes>
  </div>
   );

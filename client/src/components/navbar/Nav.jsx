@@ -1,33 +1,30 @@
-import '../../css/nav.css'
-import '../../App.css'
-
-import GeneralNavButton from "../buttons/GeneralNavButton";
-import ProfileSVG from '../../assets/profile.svg'
-import HeartSVG from '../../assets/heart.svg'
-import CartSVG from '../../assets/carticon.svg'
-import MenuIcon from '../../assets/menuIcon.svg'
-import DoroLogo from '../logos/DoroLogo';
-
+import { NavLink } from "react-router-dom";
+import { FaHome, FaTasks, FaTrash, FaUser, FaPlus } from "react-icons/fa";
+import '../../css/nav.css';
+import '../../App.css';
 
 const Nav = () => {
   return (
-    <nav className="navContainer flex-col-center">
-      <div className="navBar flex acenter row between">
-        <div className="flex-row-acenter">
-          <GeneralNavButton classname={'marginRight20'} icon={ProfileSVG}  />
-          <GeneralNavButton icon={HeartSVG}  />
-
-        </div>
-        <DoroLogo/>
-        <div className="flex-row-acenter">
-          <GeneralNavButton classname={'marginRight20'} icon={CartSVG}  />
-          <GeneralNavButton icon={MenuIcon}  />
-
-        </div>
-
-       
-      </div>
-     
+    <nav className="navContainer">
+      <NavLink to="/" className="navLink" activeclassname="active">
+        <FaHome />
+        <span>דף הבית</span>
+      </NavLink>
+      <NavLink to="/tasks" className="navLink" activeclassname="active">
+        <FaTasks />
+        <span>המשימות שלי ⭐</span>
+      </NavLink>
+      <NavLink to="/addTasks" className="navLink addTaskButton" activeclassname="active">
+        <FaPlus />
+      </NavLink>
+      <NavLink to="/deleted" className="navLink" activeclassname="active">
+        <FaTrash />
+        <span>משימות שנמחקו</span>
+      </NavLink>
+      <NavLink to="/profile" className="navLink" activeclassname="active">
+        <FaUser />
+        <span>פרופיל</span>
+      </NavLink>
     </nav>
   );
 };
