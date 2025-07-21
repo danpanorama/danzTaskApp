@@ -5,8 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// require('dotenv').config();
+// const connectDB = require('./config/db');
+
+// connectDB(); // התחברות למונגו לפני שהשרת עולה
+
+
+// https://danztaskapp.onrender.com
 var index = require('./routes/index');
 var users = require('./routes/users');
+
+
 
 var app = express();
 
@@ -21,6 +30,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// // Serve React frontend (assuming ../client/build relative to this file)
+// app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
+// // Catch all other routes and return the React index.html
+// app.get('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+// });
+
+
 
 app.use('/', index);
 app.use('/users', users);
