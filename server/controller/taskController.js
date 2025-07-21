@@ -3,6 +3,7 @@ const Task = require('../models/TaskSchema');
 // שליפת כל המשימות
 const getTasks = async (req, res) => {
   try {
+    console.log('here')
     const tasks = await Task.find();
     res.json(tasks);
   } catch (err) {
