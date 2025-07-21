@@ -15,8 +15,8 @@ const errorReducer = (state = initialState, action) => {
       return {
         ...state,
         error: {
-          title: action.payload.title,
-          message: action.payload.message,
+          title: action.data.title,
+          message: action.data.message,
         },
         hasError: true,
       };

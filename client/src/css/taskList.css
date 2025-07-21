@@ -1,4 +1,4 @@
-.taskList {
+/* .taskList {
   margin-top: 2rem;
   padding: 1rem;
   background-color: #fff;
@@ -27,4 +27,50 @@
 .taskNotes {
   margin-top: 0.5rem;
   color: #666;
+} */
+.taskList {
+  direction: rtl;
+  max-width: 600px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.taskItem {
+  background: #f3f3f3;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.taskItem.open {
+  background-color: #e0f7fa;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.taskSubHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: #555;
+}
+
+.taskNotes {
+  margin-top: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
 }
