@@ -42,7 +42,33 @@ const createTask = async (req, res) => {
   }
 };
 
+const deleteTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleted = await Task.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({
+        error: {
+          header: "לא נמצא",
+          message: "המשימה לא קיימת או כבר נמחקה"
+        }
+      });
+    }
+
+    res.json({ message: "המשימה נמחקה בהצלחה", id });
+  } catch (err) {
+    res.status(500).json({
+      error: {
+        header: "שגיאת שרת",
+        message: err.message || "אירעה שגיאה בעת מחיקת המשימה."
+      }
+    });
+  }
+};
+
 module.exports = {
   getTasks,
-  createTask
+  createTask,
+  deleteTask,
 };

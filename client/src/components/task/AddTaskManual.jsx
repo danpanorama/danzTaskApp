@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ERROR, CLEAR_ERROR } from "../../redux/constants/errorLoaderConstants"; // תוודא שהנתיב נכון
 import { addNewTask } from "../../redux/actions/taskActions";
-import axiosInstance from "../../../config/axiosInstance";
+import axiosInstance from "../../config/AxiosConfig";
 
 
 const AddTaskManual = () => {
@@ -28,11 +28,11 @@ const handleSubmit = async (e) => {
   dispatch({ type: CLEAR_ERROR });
 
   try {
-    const response = await axiosInstance.post("/tasks", {
+    const response = await axiosInstance.post("/tasks/addTask", {
       ...taskData,
       amount: taskData.amount ? Number(taskData.amount) : undefined,
     });
-
+ 
     dispatch(addNewTask(response.data));
     setTaskData({
       title: "",
