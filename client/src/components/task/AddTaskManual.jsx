@@ -7,6 +7,9 @@ import axiosInstance from "../../config/AxiosConfig";
 
 
 const AddTaskManual = () => {
+
+
+  const [loading, setLoading] = useState(false);
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
@@ -23,7 +26,7 @@ const errorState = useSelector((state) => state.error);
   };
 const handleSubmit = async (e) => {
   e.preventDefault();
-
+ setLoading(true);
   // קודם מנקים שגיאה קיימת
   dispatch({ type: CLEAR_ERROR });
 
@@ -37,7 +40,7 @@ const handleSubmit = async (e) => {
     setTaskData({
       title: "",
       description: "",
-      amount: "",
+      amount: 0,
       personName: "",
       status: "לא בוצע"
     });
@@ -50,6 +53,8 @@ const handleSubmit = async (e) => {
         message: err.response?.data?.error || "אירעה שגיאה לא ידועה",
       },
     });
+  } finally {
+    setLoading(false);
   }
 };
 
@@ -87,7 +92,9 @@ const handleSubmit = async (e) => {
       />
     
 
-      <button type="submit">שמור משימה</button>
+     <button type="submit" disabled={loading}>
+  {loading ? "טוען..." : "שמור משימה"}
+</button>
     </form>
 
   
